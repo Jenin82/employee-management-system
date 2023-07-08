@@ -1,8 +1,8 @@
 import Navbar from "../../components/Navbar/Navbar";
 
-type Props = {};
+// type Props = {};
 
-const HomePage = (props: Props) => {
+const HomePage = () => {
     return (
 		<div>
 			<Navbar/>
