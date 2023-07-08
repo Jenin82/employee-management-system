@@ -1,9 +1,27 @@
 import a from "../../assets/logoBig.png"
+import { useNavigate } from "react-router-dom";
 // type Props = {};
 
 const Navbar = () => {
+
+    const navigate = useNavigate();
+
+    function handleLogout() {
+        localStorage.setItem("loggedin", "false");
+        navigate("/login");
+      }
+
     return (
         <>
+        <style>{`
+         .logoutButton {
+            height:40px;
+            background: linear-gradient(to right,rgba(244, 248, 249, 0.514),rgba(246, 247, 248, 0.482));
+            color:white;
+            }
+        
+  `}
+        </style>
             <nav
                 className="navbar p-3 navbar-expand-lg bg-body-tertiary fixed-top bg-dark border-bottom border-bottom-dark"
                 data-bs-theme="dark"
@@ -54,7 +72,9 @@ const Navbar = () => {
                                 Technical Support
                                 </a>
                             </li>
-                            
+                            <button className="logout" onClick={handleLogout}>
+          Logout
+        </button>
                         </ul>
                     </div>
                 </div>
