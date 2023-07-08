@@ -1,6 +1,6 @@
-type Props = {}
+// type Props = {}
 
-const LoginPage = (props: Props) => {
+const LoginPage = () => {
   return (
       <>
           <div>hello</div>

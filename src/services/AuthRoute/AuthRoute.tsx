@@ -12,9 +12,9 @@ const AuthRoutes: React.FC = () => {
         console.log("userInfo", userInfo);
 
     }, []);
-	const a = false
+	setRefreshToken("")
     // return refreshToken && refreshToken.length > 0 ? (
-    return a ? (
+    return refreshToken.length > 0 ? (
         // <Navigate to={onboardingStatus ? "/profile" : "/connect-discord"} />
         <Navigate to={"/home"} />
     ) : (
