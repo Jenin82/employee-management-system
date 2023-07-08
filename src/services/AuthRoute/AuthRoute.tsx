@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Navigate} from "react-router-dom";
+import { Navigate, Outlet } from "react-router-dom";
 import LoginPage from "../../modules/LoginPage/LoginPage";
 
 //To prevent a user from accessing the login page if they are already logged in.
@@ -22,3 +22,13 @@ const AuthRoutes: React.FC = () => {
 };
 
 export default AuthRoutes;
+
+export const PrivateRoutes: React.FC = () => {
+    let refreshToken = localStorage.getItem("refreshToken");
+    let redirection = window.location.pathname.slice(1);
+    return refreshToken ? (
+        <Outlet />
+    ) : (
+        <Navigate to={`/login?ruri=${redirection}`} />
+    );
+};

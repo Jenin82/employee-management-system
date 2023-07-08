@@ -1,98 +1,82 @@
+import { Formik, Field, Form, FormikHelpers } from "formik";
+import "./styles.css";
+import a from "../../assets/logoBig.png"
+import { login } from "./loginApi";
 // type Props = {}
 
+interface Values {
+    username: string;
+    password: string;
+}
+
 const LoginPage = () => {
-	function handleSubmit(): void {
-        console.log("Submit")
-    }
 
     return (
         <>
-            <section className="vh-100" style={{ backgroundColor: "#45AC34" }}>
-                <div className="container py-5 h-100">
-                    <div className="row d-flex justify-content-center align-items-center h-100">
-                        <div className="col col-xl-10">
-                            <div
-                                className="card"
-                                style={{ borderRadius: "1rem" }}
+            <nav className="navbar bg-body-tertiary fixed-top">
+                <div className="container-fluid">
+                    <a className="navbar-brand">
+						<img src={a} className="w-50 p-2" alt="logo" />
+					</a>
+                </div>
+            </nav>
+            <div className="form-bg">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-md-offset-4 col-md-4 col-sm-offset-3 col-sm-6">
+                            <Formik
+                                initialValues={{
+                                    username: "",
+                                    password: "",
+                                }}
+                                onSubmit={(
+                                    values: Values,
+                                    { setSubmitting }: FormikHelpers<Values>
+                                ) => {
+                                    // setTimeout(() => {
+                                    //     alert(JSON.stringify(values, null, 2));
+                                    //     setSubmitting(false);
+                                    // }, 500);
+									login(values.username, values.password);
+                                }}
                             >
-                                <div className="row g-0">
-                                    <div className="col-md-6 col-lg-5 d-none d-md-block">
-                                        <img
-                                            src="https://img.freepik.com/premium-vector/business-people-standing-together-as-team_3482-8672.jpg?size=626&ext=jpg"
-                                            alt="login form"
-                                            className="img-fluid"
-                                            style={{
-                                                borderRadius: "1rem 0 0 1rem",
-                                            }}
-                                        />
-                                    </div>
-                                    <div className="col-md-6 col-lg-7 d-flex align-items-center">
-                                        <div className="card-body p-4 p-lg-5 text-black">
-                                            <form onSubmit={handleSubmit}>
-                                                <div className="d-flex align-items-center mb-3 pb-1">
-                                                    <i
-                                                        className="fas fa-cubes fa-2x me-3"
-                                                        style={{
-                                                            color: "#ff6219",
-                                                        }}
-                                                    ></i>
-                                                    <span className="h1 fw-bold mb-0">
-                                                        Logo
-                                                    </span>
-                                                </div>
-                                                <h5
-                                                    className="fw-normal mb-3 pb-3"
-                                                    style={{
-                                                        letterSpacing: "1px",
-                                                    }}
-                                                >
-                                                    Sign into your account
-                                                </h5>
-                                                <div className="form-outline mb-4">
-                                                    <input
-                                                        type="email"
-                                                        id="form2Example17"
-                                                        className="form-control form-control-lg"
-                                                    />
-                                                    <label
-                                                        className="form-label"
-                                                        htmlFor="form2Example17"
-                                                    >
-                                                        Email address
-                                                    </label>
-                                                </div>
-                                                <div className="form-outline mb-4">
-                                                    <input
-                                                        type="password"
-                                                        id="form2Example27"
-                                                        className="form-control form-control-lg"
-                                                    />
-                                                    <label
-                                                        className="form-label"
-                                                        htmlFor="form2Example27"
-                                                    >
-                                                        Password
-                                                    </label>
-                                                </div>
-                                                <div className="pt-1 mb-4">
-                                                    <button
-                                                        className="btn btn-dark btn-lg btn-block"
-                                                        type="submit"
-                                                    >
-                                                        Login
-                                                    </button>
-                                                </div>
-                                            </form>
+                                <div className="form-container">
+                                    <Form className="form-horizontal">
+                                        <h3 className="title">Login</h3>
+                                        <div className="form-group">
+                                            <Field
+                                                className="form-control"
+                                                type="text"
+                                                name="username"
+                                                placeholder="Username"
+                                            />
                                         </div>
-                                    </div>
+                                        <div className="form-group">
+                                            <Field
+                                                className="form-control"
+                                                type="password"
+                                                name="password"
+                                                placeholder="Password"
+                                            />
+                                        </div>
+                                        <span className="forgot-pass">
+                                            <a href="#">Forgot password?</a>
+                                        </span>
+                                        <button
+                                            type="submit"
+                                            className="btn signin"
+                                        >
+                                            Login
+                                        </button>
+                                    </Form>
                                 </div>
-                            </div>
+                            </Formik>
                         </div>
                     </div>
                 </div>
-            </section>{" "}
+            </div>
         </>
     );
-}
+};
 
-export default LoginPage
+export default LoginPage;
