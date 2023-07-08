@@ -2,7 +2,7 @@ import { AxiosError } from "axios";
 import { privateGateway } from "../../services/apiGateway";
 import { routes } from "../../services/urls";
 
-export const login = async (username: string, password: string) => {
+export const login = async (username: string, password: string, navigate:any) => {
     try {
         const response = await privateGateway.post(
             routes.getAccessToken,
@@ -10,20 +10,17 @@ export const login = async (username: string, password: string) => {
                 username: username,
                 password: password,
             },
-            {
-                headers: {
-                    "Content-Type": "application/x-www-form-urlencoded",
-                },
-                maxBodyLength: Infinity,
-            }
         );
         const message: any = response?.data;
         console.log(message);
+		localStorage.setItem('accessToken', JSON.stringify(message.access))
+		localStorage.setItem('refreshToken', JSON.stringify(message.refresh))
+		navigate("/home");
     } catch (err: unknown) {
         const error = err as AxiosError;
         if (error?.response) {
             console.log(error.response);
-        }
+        }	
     }
 };
 
