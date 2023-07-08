@@ -2,7 +2,12 @@ import { Formik, Field, Form, FormikHelpers } from "formik";
 import "./styles.css";
 import a from "../../assets/logoBig.png"
 import { login } from "./loginApi";
+
+import { loading } from "../../components/Common/Tostify";
+import { ToastContainer } from "react-toastify";
+
 import { useNavigate } from "react-router-dom";
+
 // type Props = {}
 
 interface Values {
@@ -38,7 +43,10 @@ const LoginPage = () => {
                                     //     alert(JSON.stringify(values, null, 2));
                                     //     setSubmitting(false);
                                     // }, 500);
+
+                                    loading()
 									login(values.username, values.password, navigate);
+
                                 }}
                             >
                                 <div className="form-container">
@@ -76,6 +84,7 @@ const LoginPage = () => {
                     </div>
                 </div>
             </div>
+            <ToastContainer/>
         </>
     );
 };
