@@ -2,12 +2,10 @@ type Props = {}
 
 const LoginPage = (props: Props) => {
   return (
-    <>
-    <div>
-        
-    </div>
-    </>
-  )
+      <>
+          <div>hello</div>
+      </>
+  );
 }
 
 export default LoginPage

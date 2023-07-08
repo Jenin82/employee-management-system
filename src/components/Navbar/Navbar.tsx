@@ -1,3 +1,4 @@
+import a from "../../assets/logoBig.png"
 // type Props = {};
 
 const Navbar = () => {
@@ -9,7 +10,7 @@ const Navbar = () => {
             >
                 <div className="container-fluid">
                 <a className="navbar-brand" href="#">
-                    <img src=" https://github.com/Alan0602/sngist/blob/main/management.png?raw=true" alt="Logo" width="30" height="24" className="d-inline-block align-text-top" />
+                    <img src={a} alt="Logo" width="100" className="d-inline-block align-text-top" />
                 </a>
                     <button
                         className="navbar-toggler"
