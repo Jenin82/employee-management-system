@@ -8,9 +8,9 @@ const Navbar = () => {
                 data-bs-theme="dark"
             >
                 <div className="container-fluid">
-                    <a className="navbar-brand" href="#">
-                        Navbar
-                    </a>
+                <a className="navbar-brand" href="#">
+                    <img src=" https://github.com/Alan0602/sngist/blob/main/management.png?raw=true" alt="Logo" width="30" height="24" className="d-inline-block align-text-top" />
+                </a>
                     <button
                         className="navbar-toggler"
                         type="button"
@@ -30,22 +30,30 @@ const Navbar = () => {
                                     aria-current="page"
                                     href="#"
                                 >
-                                    Home
+                                    Promotions
                                 </a>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link" href="#">
-                                    Features
+                                    Developers
                                 </a>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link" href="#">
-                                    Pricing
+                                    QA & Testing
                                 </a>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link disabled">Disabled</a>
+                                <a className="nav-link" href="#">
+                                    UI/Ux
+                                </a>
                             </li>
+                            <li className="nav-item">
+                                <a className="nav-link" href="#">
+                                Technical Support
+                                </a>
+                            </li>
+                            
                         </ul>
                     </div>
                 </div>
