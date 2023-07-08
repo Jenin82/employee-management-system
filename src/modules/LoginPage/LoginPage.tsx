@@ -1,6 +1,6 @@
-type Props = {}
+// type Props = {}
 
-const LoginPage = (props: Props) => {
+const LoginPage = () => {
   return (
       <>
           <section className="vh-100" style={{ backgroundColor: '#45AC34' }}>
