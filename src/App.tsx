@@ -5,6 +5,7 @@ import HomePage from "./modules/HomePage/HomePage";
 import { PrivateRoutes } from "./services/AuthRoute/AuthRoute";
 import LoginPage from "./modules/LoginPage/LoginPage";
 import LandingPage from "./modules/LandingPage/LandingPage";
+import Employees from "./modules/Employees/Employees";
 
 const router = createBrowserRouter([
     {
@@ -21,9 +22,10 @@ const router = createBrowserRouter([
         children: [
             { path: "/", element: <LandingPage /> },
             {
-                path: "/home",
+				path: "/home",
                 element: <HomePage />,
             },
+			{ path: "/employees", element: <Employees /> },
             // { path: "login", element: <Login /> },
             // { path: "forgot-password", element: <ForgotPassword /> },
             // { path: "reset-password", element: <ResetPassword /> },

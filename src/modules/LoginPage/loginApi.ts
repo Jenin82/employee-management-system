@@ -14,14 +14,14 @@ export const login = async (username: string, password: string, navigate:any) =>
         );
         const message: any = response?.data;
         console.log(message);
-		localStorage.setItem('accessToken', JSON.stringify(message.access))
-		localStorage.setItem('refreshToken', JSON.stringify(message.refresh))
+		localStorage.setItem('accessToken', message.access)
+		localStorage.setItem('refreshToken', message.refresh)
 		navigate("/home");
     } catch (err: unknown) {
         const error = err as AxiosError;
         if (error?.response) {
             console.log(error.response);
-        }	
+        }		
     }
 };
 

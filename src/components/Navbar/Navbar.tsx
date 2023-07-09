@@ -1,16 +1,14 @@
-import a from "../../assets/logoBig.png"
 import { useNavigate } from "react-router-dom";
+import a from "../../assets/logoBig.png";
 // type Props = {};
 
 const Navbar = () => {
-
     const navigate = useNavigate();
-
-    function handleLogout() {
-        localStorage.setItem("loggedin", "false");
+    const access = localStorage.getItem("accessToken");
+    function handleLogout(event: any): void {
+        localStorage.clear();
         navigate("/login");
-      }
-
+    }
     return (
         <>
         <style>{`
@@ -27,9 +25,14 @@ const Navbar = () => {
                 data-bs-theme="dark"
             >
                 <div className="container-fluid">
-                <a className="navbar-brand" href="#">
-                    <img src={a} alt="Logo" width="100" className="d-inline-block align-text-top" />
-                </a>
+                    <a className="navbar-brand" href="#">
+                        <img
+                            src={a}
+                            alt="Logo"
+                            width="100"
+                            className="d-inline-block align-text-top"
+                        />
+                    </a>
                     <button
                         className="navbar-toggler"
                         type="button"
@@ -41,41 +44,55 @@ const Navbar = () => {
                     >
                         <span className="navbar-toggler-icon"></span>
                     </button>
-                    <div className="collapse navbar-collapse" id="navbarNav">
-                        <ul className="navbar-nav">
-                            <li className="nav-item">
-                                <a
-                                    className="nav-link active"
-                                    aria-current="page"
-                                    href="#"
-                                >
-                                    Promotions
-                                </a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="#">
-                                    Developers
-                                </a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="#">
-                                    QA & Testing
-                                </a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="#">
-                                    UI/Ux
-                                </a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="#">
-                                Technical Support
-                                </a>
-                            </li>
-                            <button className="logout" onClick={handleLogout}>
-          Logout
-        </button>
-                        </ul>
+
+                    <div
+                        className="collapse navbar-collapse justify-content-end"
+                        id="navbarNav"
+                    >
+                        <div className="row justify-content-end">
+                            <ul className="navbar-nav">
+                                <li className="nav-item">
+                                    <a
+                                        className="nav-link active"
+                                        aria-current="page"
+                                        href="#"
+                                    >
+                                        Promotions
+                                    </a>
+                                </li>
+                                <li className="nav-item">
+                                    <a className="nav-link" href="/employees">
+                                        Employees
+                                    </a>
+                                </li>
+                                <li className="nav-item">
+                                    <a className="nav-link" href="#">
+                                        QA & Testing
+                                    </a>
+                                </li>
+                                <li className="nav-item">
+                                    <a className="nav-link" href="#">
+                                        UI/Ux
+                                    </a>
+                                </li>
+                                <li className="nav-item">
+                                    <a className="nav-link" href="#">
+                                        Technical Support
+                                    </a>
+                                </li>
+                                {access && (
+                                    <li className="nav-item">
+                                        <a
+                                            className="nav-link"
+                                            onClick={handleLogout}
+                                            href="/login"
+                                        >
+                                            logout
+                                        </a>
+                                    </li>
+                                )}
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </nav>
