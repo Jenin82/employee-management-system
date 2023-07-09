@@ -1,6 +1,7 @@
 import { AxiosError } from "axios";
 import { privateGateway } from "../../services/apiGateway";
 import { routes } from "../../services/urls";
+import { notify, success } from "../../components/Common/Tostify";
 
 
 export const login = async (username: string, password: string, navigate:any) => {
@@ -23,6 +24,14 @@ export const login = async (username: string, password: string, navigate:any) =>
             console.log(error.response);
         }		
     }
+    if(username === localStorage.getItem('userName') && password === localStorage.getItem('password')){
+        success()
+        localStorage.setItem('loggedIn', 'true');
+    }
+    else{
+
+        notify()
+    } 
 };
 
 

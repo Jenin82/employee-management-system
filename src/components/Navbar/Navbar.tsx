@@ -57,7 +57,7 @@ const Navbar = () => {
                                         aria-current="page"
                                         href="#"
                                     >
-                                        Promotions
+                                        Profile
                                     </a>
                                 </li>
                                 <li className="nav-item">
