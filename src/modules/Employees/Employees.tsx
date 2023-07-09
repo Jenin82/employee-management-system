@@ -20,27 +20,25 @@ const Employees = () => {
         { column: "name", Label: "Name", isSortable: false },
         { column: "id", Label: "ID", isSortable: false },
         { column: "role", Label: "Role", isSortable: false },
-        // { column: "created_by", Label: "Created By", isSortable: false },
-        // { column: "created_at", Label: "Created On", isSortable: false },
     ];
     
 	const row = [
         { name: "Test", id: "1234", role: "employee" },
-        { column: "user_ig_link_ig", Label: "Members", isSortable: false },
-        { column: "updated_by", Label: "Updated By", isSortable: false },
-        { column: "created_by", Label: "Created By", isSortable: false },
-        { column: "created_at", Label: "Created On", isSortable: false },
+        { name: "Test", id: "1234", role: "employee" },
+        { name: "Test", id: "1234", role: "employee" },
+        { name: "Test", id: "1234", role: "employee" },
+        
     ];
     function handleIconClick(column: string): void {
-        throw new Error("Function not implemented.");
+        console.log(column)
     }
-
+	
 	function handleEdit(column: string | number | boolean): void {
-		throw new Error("Function not implemented.");
+		console.log(column)
 	}
-
+	
 	function handleDelete(column: string | number | undefined): void {
-		throw new Error("Function not implemented.");
+		console.log(column)
 	}
 
     return (
