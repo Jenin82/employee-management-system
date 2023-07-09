@@ -17,7 +17,7 @@ export const login = async (username: string, password: string, navigate:any) =>
         console.log(message);
 		localStorage.setItem('accessToken', message.response.access)
 		localStorage.setItem('refreshToken', message.response.refresh)
-		navigate("/home");
+		navigate("/profile");
     } catch (err: unknown) {
         const error = err as AxiosError;
         if (error?.response) {
