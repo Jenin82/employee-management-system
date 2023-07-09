@@ -1,6 +1,6 @@
-import a from "../../assets/Heder.png"
+import a from "../../assets/logoBig.png";
 
-type Props = {}
+type Props = {};
 
 const LandingPage = (props: Props) => {
   return (
@@ -57,33 +57,39 @@ const LandingPage = (props: Props) => {
               padding: 8px 16px;
             }
 
-            h1{
-                align-items: right;
-                color:rgba(54, 52, 52, 0.797)
-            }
-            .headerland{
-                position: fixed;
+            h1 {
+              align-items: right;
+              color: rgba(54, 52, 52, 0.797);
             }
           }
         `}
       </style>
-      <div>
-        <img src={a} alt="" className="headerland"/>
-      </div>
+      <nav
+                className="navbar p-3 navbar-expand-lg bg-body-tertiary fixed-top bg-dark border-bottom border-bottom-dark"
+                data-bs-theme="dark"
+            >
+                <div className="container-fluid">
+                <a className="navbar-brand" href="#">
+                    <img src={a} alt="Logo" width="100" className="d-inline-block align-text-top" />
+
+                </a>
+                </div>
+            </nav>
       <div className="landing-image"></div>
       <div className="container">
         <div className="row">
           <div className="col-lg-6 offset-lg-6">
             <div className="landing-content">
               <h1>Welcome to the Employment Management System</h1>
-              <a  className="btn btn-primary btn-lg login-button">Login</a>
+              <a href="#" className="btn btn-primary btn-lg login-button">
+                Login
+              </a>
             </div>
           </div>
         </div>
       </div>
     </div>
+  );
+};
 
-  )
-}
-
-export default LandingPage
+export default LandingPage;

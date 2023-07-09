@@ -9,9 +9,17 @@ const Navbar = () => {
         localStorage.clear();
         navigate("/login");
     }
-
     return (
         <>
+        <style>{`
+         .logoutButton {
+            height:40px;
+            background: linear-gradient(to right,rgba(244, 248, 249, 0.514),rgba(246, 247, 248, 0.482));
+            color:white;
+            }
+        
+  `}
+        </style>
             <nav
                 className="navbar p-3 navbar-expand-lg bg-body-tertiary fixed-top bg-dark border-bottom border-bottom-dark"
                 data-bs-theme="dark"
@@ -36,6 +44,7 @@ const Navbar = () => {
                     >
                         <span className="navbar-toggler-icon"></span>
                     </button>
+
                     <div
                         className="collapse navbar-collapse justify-content-end"
                         id="navbarNav"
