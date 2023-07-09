@@ -1,6 +1,7 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-import './CreateUserForm.css';
+import './createEmployee.css';
+import Navbar from '../../components/Navbar/Navbar';
 
 type Props = {}
 
@@ -28,8 +29,10 @@ const CreateEmployee = (props: Props) => {
       };
 
   return (
+    <>
+            <Navbar />
+      <h1 className="heading">Create User</h1>
     <div className="container">
-      <h1>Create User</h1>
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
@@ -64,16 +67,17 @@ const CreateEmployee = (props: Props) => {
             <label htmlFor="role" className="form-label">Role</label>
             <Field as="select" id="role" name="role" className="form-control">
               <option value="">Select Role</option>
-              <option value="admin">Admin</option>
-              <option value="user">User</option>
+              <option value="admin">Manager</option>
+              <option value="user">Employee</option>
             </Field>
             <ErrorMessage name="role" component="div" className="text-danger" />
           </div>
 
-          <button type="submit" className="btn btn-primary">Create User</button>
+          <button type="submit" className="btn btn-success">Create User</button>
         </Form>
       </Formik>
     </div>
+    </>
   )
 }
 
