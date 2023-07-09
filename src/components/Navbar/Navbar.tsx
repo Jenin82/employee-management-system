@@ -17,11 +17,14 @@ const Navbar = () => {
             background: linear-gradient(to right,rgba(244, 248, 249, 0.514),rgba(246, 247, 248, 0.482));
             color:white;
             }
-        
+            .custom-shadow {
+                box-shadow: 0 0 10px rgba(0, 0, 0, 1.2); /* Define your own shadow properties here */
+              }
+           
   `}
         </style>
             <nav
-                className="navbar p-3 navbar-expand-lg bg-body-tertiary fixed-top bg-dark border-bottom border-bottom-dark"
+                className="navbar  custom-shadow p-3 navbar-expand-lg bg-body-tertiary fixed-top bg-dark border-bottom border-bottom-dark"
                 data-bs-theme="dark"
             >
                 <div className="container-fluid">
