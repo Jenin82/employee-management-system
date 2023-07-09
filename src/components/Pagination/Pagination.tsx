@@ -11,7 +11,7 @@ interface Propss extends ButtonHTMLAttributes<HTMLButtonElement> {
 export const PrimaryButton: React.FC<Propss> = ({
     text,
     handleClick,
-    bgColor = "white",
+    bgColor = "var(--green)",
     prefixIcon,
     margin,
     ...rest
@@ -22,9 +22,9 @@ export const PrimaryButton: React.FC<Propss> = ({
             style={{
                 height: "max-content",
                 padding: "6px 16px",
-                border: "1px solid var(--blue)",
+                border: "1px solid var(--black)",
                 borderRadius: "8px",
-                color: "var(--blue)",
+                color: "var(--green)",
                 backgroundColor: bgColor,
                 display: "flex",
                 alignItems: "center",

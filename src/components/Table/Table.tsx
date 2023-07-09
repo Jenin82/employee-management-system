@@ -100,7 +100,7 @@ const Table: FC<TableProps> = (props: TableProps) => {
                                 <td className={styles.td}>
                                     {startIndex + index + 1}
                                 </td>{" "}
-                                {props.columnOrder.map(column => (
+                                {props.columnOrder.map((column) => (
                                     <td
                                         className={styles.td}
                                         key={column.column}
@@ -111,11 +111,11 @@ const Table: FC<TableProps> = (props: TableProps) => {
                                     </td>
                                 ))}
                                 {props.id &&
-                                    props.id.map(column => (
+                                    props.id.map((column) => (
                                         <td className={styles.td} key={column}>
                                             <div className={styles.icons}>
                                                 {props.onEditClick && (
-                                                    <button
+                                                    <p
                                                         onClick={() =>
                                                             props.onEditClick &&
                                                             props.onEditClick(
@@ -124,44 +124,57 @@ const Table: FC<TableProps> = (props: TableProps) => {
                                                         }
                                                     >
                                                         <FaEdit />
-                                                    </button>
+                                                    </p>
+                                                )}
+
+                                                {props.onDeleteClick && (
+                                                    <p
+                                                        onClick={() =>
+                                                            setIsOpen(true)
+                                                        }
+                                                    >
+                                                        <MdDelete />
+                                                    </p>
+                                                )}
+                                                {isOpen && (
+                                                    <Modal
+                                                        setIsOpen={setIsOpen}
+                                                        id={rowData[column]}
+                                                        heading={
+                                                            props.modalDeleteHeading
+                                                        }
+                                                        content={
+                                                            props.modalDeleteContent
+                                                        }
+                                                        click={
+                                                            props.onDeleteClick
+                                                        }
+                                                    />
                                                 )}
                                                 {props.onVerifyClick && (
-                                                    <button
+                                                    <p
                                                         className={styles.btns}
                                                         onClick={() =>
                                                             setIsOpen(true)
                                                         }
                                                     >
-                                                        Verify
-                                                    </button>
+                                                        Promote
+                                                    </p>
                                                 )}
                                                 {isOpen && (
                                                     <Modal
-														setIsOpen={setIsOpen}
-														id={rowData[column]}
-														heading={props.modalVerifyHeading}
-														content={props.modalVerifyContent} 
-														click={props.onVerifyClick} 
-													/>
-                                                )}
-                                                {props.onDeleteClick && (
-                                                    <button
-                                                        onClick={() =>
-															setIsOpen(true)
+                                                        setIsOpen={setIsOpen}
+                                                        id={rowData[column]}
+                                                        heading={
+                                                            props.modalVerifyHeading
                                                         }
-                                                    >
-                                                        <MdDelete />
-                                                    </button>
-                                                )}
-												{isOpen && (
-                                                    <Modal
-														setIsOpen={setIsOpen}
-														id={rowData[column]}
-														heading={props.modalDeleteHeading}
-														content={props.modalDeleteContent} 
-														click={props.onDeleteClick} 
-													/>
+                                                        content={
+                                                            props.modalVerifyContent
+                                                        }
+                                                        click={
+                                                            props.onVerifyClick
+                                                        }
+                                                    />
                                                 )}
                                             </div>
                                         </td>

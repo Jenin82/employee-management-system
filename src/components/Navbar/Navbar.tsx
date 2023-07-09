@@ -5,7 +5,7 @@ import a from "../../assets/logoBig.png";
 const Navbar = () => {
     const navigate = useNavigate();
     const access = localStorage.getItem("accessToken");
-    function handleLogout(event: any): void {
+    function handleLogout(): void {
         localStorage.clear();
         navigate("/login");
     }

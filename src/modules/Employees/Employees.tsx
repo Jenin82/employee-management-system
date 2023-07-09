@@ -13,7 +13,7 @@ const Employees = () => {
 	}, [])
 
 	const handleNextClick = () => {
-		console.log("next")
+		console.log(data)
 	}
 	
     const columnOrder = [
@@ -23,27 +23,27 @@ const Employees = () => {
     ];
     
 	const row = [
-        { name: "Test", id: "1234", role: "employee" },
-        { name: "Test", id: "1234", role: "employee" },
-        { name: "Test", id: "1234", role: "employee" },
-        { name: "Test", id: "1234", role: "employee" },
-        
+        { id: "1234", name: "Test", role: "employee" },
+        { id: "asas1", name: "Test", role: "employee" },
+        { id: "11221", name: "Test", role: "employee" },
+        { id: "123121", name: "Test", role: "employee" },
     ];
     function handleIconClick(column: string): void {
-        console.log(column)
+        console.log(column);
     }
-	
-	function handleEdit(column: string | number | boolean): void {
-		console.log(column)
-	}
-	
-	function handleDelete(column: string | number | undefined): void {
-		console.log(column)
-	}
+
+    function handleEdit(column: string | number | boolean): void {
+        console.log(column);
+    }
+
+    function handleDelete(column: string | number | undefined): void {
+        console.log(column);
+    }
 
     return (
         <div>
             <Navbar />
+			<h3 className="text-start">Employee Details</h3>
             <div className="row justify-content-end btn-container">
                 <button
                     type="button"
@@ -58,7 +58,9 @@ const Employees = () => {
                 perPage={0}
                 columnOrder={columnOrder}
                 onEditClick={handleEdit}
+                id={["id"]}
                 onDeleteClick={handleDelete}
+                onVerifyClick={handleEdit}
                 modalDeleteHeading="Delete"
                 modalDeleteContent="Are you sure you want to delete this user ?"
             >
@@ -67,13 +69,15 @@ const Employees = () => {
                     onIconClick={handleIconClick}
                     action={true}
                 />
-                <Pagination
-                    currentPage={0}
-                    totalPages={3}
-                    margin="10px 0"
-                    handleNextClick={handleNextClick}
-                    handlePreviousClick={handleNextClick}
-                />
+                <div className="page row justify-content-center align-center">
+                    <Pagination
+                        currentPage={1}
+                        totalPages={1}
+                        margin="10px 0"
+                        handleNextClick={handleNextClick}
+                        handlePreviousClick={handleNextClick}
+                    />
+                </div>
             </Table>
         </div>
     );

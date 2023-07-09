@@ -47,12 +47,19 @@
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
+	cursor: pointer;
 }
 
 .btns {
-	background-color: var(--blue);
+	background-color: var(--green);
 	color: #fff;
 	border-radius: 10px;
-	padding: 4px 6px;
+	cursor: pointer;
+	margin-left: 5px;
+	padding: 2px 6px;
 }
 
+.page{
+	border: 1px solid var(--black);
+	width: 100%;
+}
