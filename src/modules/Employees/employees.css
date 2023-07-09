@@ -1,0 +1,9 @@
+.create{
+	background-color: var(--green);
+	color: var(--white);
+}
+
+.btn-container{
+	width: 100%;
+	margin: 0;
+}

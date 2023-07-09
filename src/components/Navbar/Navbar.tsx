@@ -52,29 +52,32 @@ const Navbar = () => {
                                     </a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="/employees">
+                                    <a
+                                        className="nav-link active"
+                                        href="/employees"
+                                    >
                                         Employees
                                     </a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="#">
+                                    <a className="nav-link active" href="#">
                                         QA & Testing
                                     </a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="#">
+                                    <a className="nav-link active" href="#">
                                         UI/Ux
                                     </a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="#">
+                                    <a className="nav-link active" href="#">
                                         Technical Support
                                     </a>
                                 </li>
                                 {access && (
                                     <li className="nav-item">
                                         <a
-                                            className="nav-link"
+                                            className="nav-link active"
                                             onClick={handleLogout}
                                             href="/login"
                                         >
