@@ -25,7 +25,7 @@ const Navbar = () => {
                 data-bs-theme="dark"
             >
                 <div className="container-fluid">
-                    <a className="navbar-brand" href="#">
+                    <a className="navbar-brand" href="/profile">
                         <img
                             src={a}
                             alt="Logo"
@@ -55,7 +55,7 @@ const Navbar = () => {
                                     <a
                                         className="nav-link active"
                                         aria-current="page"
-                                        href="#"
+                                        href="/profile"
                                     >
                                         Profile
                                     </a>
