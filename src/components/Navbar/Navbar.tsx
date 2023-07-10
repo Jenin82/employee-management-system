@@ -28,7 +28,7 @@ const Navbar = () => {
                 data-bs-theme="dark"
             >
                 <div className="container-fluid">
-                    <a className="navbar-brand" href="#">
+                    <a className="navbar-brand" href="/profile">
                         <img
                             src={a}
                             alt="Logo"
@@ -58,7 +58,7 @@ const Navbar = () => {
                                     <a
                                         className="nav-link active"
                                         aria-current="page"
-                                        href="#"
+                                        href="/profile"
                                     >
                                         Profile
                                     </a>
@@ -71,7 +71,7 @@ const Navbar = () => {
                                         Employees
                                     </a>
                                 </li>
-                                <li className="nav-item">
+                                {/* <li className="nav-item">
                                     <a className="nav-link active" href="#">
                                         QA & Testing
                                     </a>
@@ -85,7 +85,7 @@ const Navbar = () => {
                                     <a className="nav-link active" href="#">
                                         Technical Support
                                     </a>
-                                </li>
+                                </li> */}
                                 {access && (
                                     <li className="nav-item">
                                         <a

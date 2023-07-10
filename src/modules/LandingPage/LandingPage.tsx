@@ -80,7 +80,7 @@ const LandingPage = () => {
           <div className="col-lg-6 offset-lg-6">
             <div className="landing-content">
               <h1>Welcome to the Employment Management System</h1>
-              <a href="#" className="btn btn-primary btn-lg login-button">
+              <a href="/login" className="btn btn-primary btn-lg login-button">
                 Login
               </a>
             </div>

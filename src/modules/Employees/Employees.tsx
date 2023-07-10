@@ -5,8 +5,10 @@ import Table from "../../components/Table/Table";
 import { getEmployees } from "./employeeApi";
 import './employees.css'
 import Pagination from "../../components/Pagination/Pagination";
+import { useNavigate } from "react-router-dom";
 
 const Employees = () => {
+	const navigate = useNavigate()
 	const [data, setData] = useState<any[]>([]);
 	useEffect(() => {
 		getEmployees(setData)
@@ -40,6 +42,10 @@ const Employees = () => {
         console.log(column);
     }
 
+	function handleCreate(): void {
+		navigate('/employees/create');
+	}
+
     return (
         <div>
             <Navbar />
@@ -48,6 +54,7 @@ const Employees = () => {
                 <button
                     type="button"
                     className="btn btn-primary create w-25 mb-4"
+					onClick={handleCreate}
                 >
                     Create
                 </button>

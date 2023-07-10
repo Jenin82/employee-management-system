@@ -7,7 +7,7 @@ import LoginPage from "./modules/LoginPage/LoginPage";
 import LandingPage from "./modules/LandingPage/LandingPage";
 import Employees from "./modules/Employees/Employees";
 import Profile from "./modules/Profile/Profile";
-import CreateEmployee from "./modules/CreateEmployee/CreateEmployee";
+import CreateEmployee from "./modules/Employees/CreateEmployee";
 
 const router = createBrowserRouter([
     {
@@ -30,7 +30,7 @@ const router = createBrowserRouter([
             },
 			{ path: "/employees", element: <Employees /> },
             { path: "/profile", element: <Profile /> },
-            { path: "/create", element: <CreateEmployee /> },
+            { path: "/employees/create", element: <CreateEmployee /> },
             // { path: "login", element: <Login /> },
             // { path: "forgot-password", element: <ForgotPassword /> },
             // { path: "reset-password", element: <ResetPassword /> },
