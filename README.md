@@ -1,12 +1,12 @@
 # Employee Management System
 
-## Hosted Link :  https://github.com/Jenin82/employee-management-system
+## Hosted Link :  https://employeems.netlify.app/
 
-### DEFAULT
+### DEFAULT SETUP
 
-Username: beyond
+Username: `beyond`
 
-Password: 1122
+Password: `1122`
 
 ## Project for Beyond Us Hackathon
 
