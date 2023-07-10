@@ -1,4 +1,13 @@
 # Employee Management System
+
+## Hosted Link :  https://github.com/Jenin82/employee-management-system
+
+### DEFAULT
+
+Username: beyond
+
+Password: 1122
+
 ## Project for Beyond Us Hackathon
 
 The Employee Management System is designed to simplify and automate various employee-related tasks, such as tracking attendance, managing leave requests, and maintaining employee records. The system provides a user-friendly interface for administrators and employees to access and interact with the platform efficiently.
@@ -24,5 +33,6 @@ The Employee Management System is designed to simplify and automate various empl
 - Django
 - Django REST Framework
 - MySQL
+
 
 
